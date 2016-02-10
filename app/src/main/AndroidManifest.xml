@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.dawanse.dawn.meroo"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:fullBackupContent="true"
+        android:icon="@drawable/merooicon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.AddActivity"
+            android:excludeFromRecents="true"
+            android:label="Add"
+            android:noHistory="true"
+            android:parentActivityName=".activity.MainActivity">
+        </activity>
+        <activity
+            android:name=".activity.CartActivity"
+            android:label="Cart"
+            android:parentActivityName=".activity.MainActivity"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".activity.TotalActivity"
+            android:label="Total"
+            android:parentActivityName=".activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:label="Settings"
+            android:parentActivityName=".activity.MainActivity"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".activity.NewSettingsActivity"
+            android:label="@string/title_activity_new_settings"
+            android:parentActivityName=".activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dawanse.dawn.meroo.activity.MainActivity"/>
+        </activity>
+
+        <receiver android:name=".notification.NotificationReceiver"/>
+
+        <activity
+            android:name=".activity.CompareChart"
+            android:label="Chart"
+            android:parentActivityName=".activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dawanse.dawn.meroo.activity.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".activity.ShowChart"
+            android:label="BarChart"
+            android:parentActivityName=".activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dawanse.dawn.meroo.activity.MainActivity"/>
+        </activity>
+    </application>
+
+</manifest>

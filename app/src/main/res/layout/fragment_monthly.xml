@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.dawanse.dawn.meroo.fragments.MonthlyFragment">
+
+    <ListView
+        android:id="@+id/monthlyListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Your total expense up-to-date is "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv"
+        android:gravity="center"
+        android:textSize="100sp"
+        tools:text="2000"/>
+
+
+</RelativeLayout>

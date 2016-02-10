@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#125688</color>
+    <color name="colorPrimaryDark">#125688</color>
+    <color name="colorAccent">#42a5f5</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorSecondary">#42a5f5</color>
+    <color name="colorSecondaryDark">#398ccf</color>
+    <color name="colorThird">#b8d1d8e9</color>
+    <color name="colorPrimaryText">#0e3a5e</color>
+    <color name="colorSecText">#0e5581</color>
+    <color name="colorDateText">#9c2928</color>
+
+    <color name="above_average">#b71c1c</color>
+    <color name="below_average">#1b5e20</color>
+
+</resources>

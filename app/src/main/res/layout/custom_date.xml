@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#dadada">
+
+    <TextView
+        android:id="@+id/tvDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#b71c1c"
+        android:textSize="40sp"
+        tools:text="20"/>
+
+    <TextView
+        android:id="@+id/tvMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvDay"
+        android:layout_toEndOf="@+id/tvDay"
+        android:layout_toRightOf="@+id/tvDay"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="20sp"
+        tools:text="December"/>
+
+    <TextView
+        android:id="@+id/tvYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvWeekDay"
+        android:layout_below="@+id/tvDay"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp"
+        tools:text="1991"/>
+
+    <TextView
+        android:id="@+id/tvWeekDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDay"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="32sp"
+        tools:text="Friday"/>
+
+</RelativeLayout>

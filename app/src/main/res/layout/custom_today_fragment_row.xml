@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/todayFragId"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textSize="16sp"
+        tool:text="1"/>
+
+    <TextView
+        android:id="@+id/todayFragItem"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/todayFragId"
+        android:layout_toLeftOf="@+id/rs"
+        android:layout_toRightOf="@+id/todayFragId"
+        android:layout_toStartOf="@+id/rs"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp"
+        tool:text="Momo"/>
+
+    <TextView
+        android:id="@+id/rs"
+        android:layout_width="20dp"
+        android:layout_height="48dp"
+        android:layout_toLeftOf="@+id/todayFragPrice"
+        android:layout_toStartOf="@+id/todayFragPrice"
+        android:gravity="center"
+        android:text="Rs"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/todayFragPrice"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:paddingStart="8dp"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp"
+        tool:text="120"/>
+
+</RelativeLayout>

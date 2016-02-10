@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvCartId"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <TextView
+        android:id="@+id/tvCartItem"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_toLeftOf="@+id/tvCartDate"
+        android:layout_toStartOf="@+id/tvCartDate"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/colorPrimaryText"
+        tools:text="Hello"/>
+
+    <TextView
+        android:id="@+id/tvCartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/colorPrimaryText"
+        tools:text="20-12-1991"/>
+
+
+</RelativeLayout>

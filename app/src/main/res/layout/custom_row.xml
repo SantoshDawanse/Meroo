@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorThird"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingStart="8dp"
+        android:textColor="@color/colorDateText"
+        android:textSize="16sp"
+        tools:text="1991-12-20"/>
+
+    <TextView
+        android:id="@+id/tvDetails"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_toEndOf="@+id/tvDate"
+        android:layout_toLeftOf="@+id/rs"
+        android:layout_toRightOf="@+id/tvDate"
+        android:layout_toStartOf="@+id/rs"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingStart="8dp"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp"
+        tools:text="MoMo"/>
+
+    <TextView
+        android:id="@+id/rs"
+        android:layout_width="20dp"
+        android:layout_height="48dp"
+        android:layout_toLeftOf="@+id/tvPrice"
+        android:layout_toStartOf="@+id/tvPrice"
+        android:gravity="center"
+        android:text="Rs"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="62dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="4dp"
+        android:paddingStart="4dp"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp"
+        tools:text="200000"/>
+</RelativeLayout>

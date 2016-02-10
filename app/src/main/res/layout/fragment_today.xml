@@ -1,0 +1,47 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dawanse.dawn.meroo.fragments.TodayFragment">
+
+    <ListView
+        android:id="@+id/todayListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl"
+        android:layout_alignParentTop="true">
+
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tvShow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Your total expense of today is"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvShow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvShow1"
+            android:gravity="center"
+            android:textColor="#388e3c"
+            android:textSize="48sp"
+            tools:text="100"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
