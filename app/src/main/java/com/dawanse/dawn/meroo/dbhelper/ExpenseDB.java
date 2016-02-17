@@ -240,7 +240,7 @@ public class ExpenseDB {
 
     public ArrayList<String> queryXData(){
         ArrayList<String> xNewData = new ArrayList<String>();
-        String query = "SELECT " + DAILY_DATE + " FROM " + TABLE_DAILY_FRAG;
+        String query = "SELECT " + DAILY_DATE + " FROM " + TABLE_DAILY_FRAG + " ORDER BY " + DAILY_FRAG_ID + " DESC";
         Cursor cursor = mSQLiteDatabase.rawQuery(query, null);
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             xNewData.add(cursor.getString(cursor.getColumnIndex(DAILY_DATE)));
@@ -251,7 +251,7 @@ public class ExpenseDB {
 
     public ArrayList<Float> queryYData(){
         ArrayList<Float> yNewData = new ArrayList<Float>();
-        String query = "SELECT " + DAILY_TOTAL + " FROM " + TABLE_DAILY_FRAG;
+        String query = "SELECT " + DAILY_TOTAL + " FROM " + TABLE_DAILY_FRAG + " ORDER BY " + DAILY_FRAG_ID + " DESC";
         Cursor cursor = mSQLiteDatabase.rawQuery(query, null);
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             yNewData.add(cursor.getFloat(cursor.getColumnIndex(DAILY_TOTAL)));

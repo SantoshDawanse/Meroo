@@ -27,53 +27,11 @@
             android:excludeFromRecents="true"
             android:label="Add"
             android:noHistory="true"
-            android:parentActivityName=".activity.MainActivity">
-        </activity>
-        <activity
-            android:name=".activity.CartActivity"
-            android:label="Cart"
-            android:parentActivityName=".activity.MainActivity"
-            android:windowSoftInputMode="stateHidden">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.MainActivity"/>
-        </activity>
-        <activity
-            android:name=".activity.TotalActivity"
-            android:label="Total"
-            android:parentActivityName=".activity.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.MainActivity"/>
-        </activity>
-        <activity
-            android:name=".activity.SettingsActivity"
-            android:label="Settings"
-            android:parentActivityName=".activity.MainActivity"
-            android:windowSoftInputMode="stateHidden">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.MainActivity"/>
+            android:theme="@style/NewDialog">
         </activity>
 
         <receiver android:name=".notification.NotificationReceiver"/>
 
-        <activity
-            android:name=".activity.CompareChart"
-            android:label="Chart"
-            android:parentActivityName=".activity.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.dawanse.dawn.meroo.activity.MainActivity"/>
-        </activity>
-        <activity
-            android:name=".activity.ShowChart"
-            android:label="BarChart"
-            android:parentActivityName=".activity.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.dawanse.dawn.meroo.activity.MainActivity"/>
-        </activity>
     </application>
 
 </manifest>

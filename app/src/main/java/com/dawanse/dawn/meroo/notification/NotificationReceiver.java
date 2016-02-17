@@ -7,10 +7,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.TaskStackBuilder;
 
 import com.dawanse.dawn.meroo.R;
-import com.dawanse.dawn.meroo.activity.CartActivity;
 import com.dawanse.dawn.meroo.activity.MainActivity;
 
 public class NotificationReceiver extends BroadcastReceiver{
@@ -22,12 +20,9 @@ public class NotificationReceiver extends BroadcastReceiver{
 
         int num = 0;
 
-        Intent contentIntent = new Intent(context, CartActivity.class);
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-        stackBuilder.addParentStack(MainActivity.class);
-        stackBuilder.addNextIntent(contentIntent);
+        Intent contentIntent = new Intent(context, MainActivity.class);
 
-        PendingIntent pendingIntent = stackBuilder.getPendingIntent(NOTIFICATION_ID, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, contentIntent, PendingIntent.FLAG_ONE_SHOT);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
         builder.setSmallIcon(R.drawable.ic_notifications_black_24dp);

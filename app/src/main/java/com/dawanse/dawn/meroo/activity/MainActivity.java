@@ -1,28 +1,31 @@
 package com.dawanse.dawn.meroo.activity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.dawanse.dawn.meroo.R;
 import com.dawanse.dawn.meroo.adapter.ExpenseCursorAdapter;
 import com.dawanse.dawn.meroo.dbhelper.ExpenseDB;
+import com.dawanse.dawn.meroo.fragments.ChartFragment;
+import com.dawanse.dawn.meroo.fragments.MainFragment;
+import com.dawanse.dawn.meroo.fragments.SettingsFragment;
+import com.dawanse.dawn.meroo.fragments.ShoppingFragment;
+import com.dawanse.dawn.meroo.fragments.TotalFragment;
 
-import java.util.Calendar;
-import java.util.Locale;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     TextView mDay, mWeekDay, mMonth, mYear;
     ListView listView;
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_new);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -48,7 +51,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mExpenseDB = new ExpenseDB(this);
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        //set fragment initally
+        MainFragment fragment = new MainFragment();
+        android.support.v4.app.FragmentTransaction fragmentTransaction =
+                getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.frame_container, fragment);
+        fragmentTransaction.commit();
+
+        /*mExpenseDB = new ExpenseDB(this);
 
         mDay = (TextView) findViewById(R.id.tvDay);
         mWeekDay = (TextView) findViewById(R.id.tvWeekDay);
@@ -56,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         mYear = (TextView) findViewById(R.id.tvYear);
 
         listView = (ListView) findViewById(R.id.listView);
-        listView.setLongClickable(true);
+//        listView.setLongClickable(true);
         listView.isSmoothScrollbarEnabled();
 
         final Calendar calendar = Calendar.getInstance();
@@ -110,7 +129,8 @@ public class MainActivity extends AppCompatActivity {
 
                 return false;
             }
-        });
+        });*/
+
     }
 
     @Override
@@ -123,31 +143,66 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        //handling click events
-        switch (item.getItemId()) {
-            case R.id.menu_cart:
-                startActivity(new Intent(this, CartActivity.class));
-                return true;
 
-            case R.id.menu_total:
-                startActivity(new Intent(this, TotalActivity.class));
-                return true;
+        return super.onOptionsItemSelected(item);
 
-            case R.id.menu_chart:
-                startActivity(new Intent(this, CompareChart.class));
-                return true;
-
-            case R.id.menu_bar_chart:
-                startActivity(new Intent(this, ShowChart.class));
-                return true;
-
-            case R.id.action_settings:
-                startActivity(new Intent(this, SettingsActivity.class));
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
 
     }
 
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        Fragment fragment = new MainFragment();
+        if (id == R.id.pocket_manager) {
+            fragment = new MainFragment();
+            /*android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame_container, fragment);
+            fragmentTransaction.commit();*/
+        } else if (id == R.id.total_review) {
+            fragment = new TotalFragment();
+            /*android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame_container, fragment);
+            fragmentTransaction.commit();*/
+        } else if (id == R.id.compare) {
+            fragment = new ChartFragment();
+            /*android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame_container, fragment);
+            fragmentTransaction.commit();*/
+        } else if (id == R.id.shopping_list) {
+            fragment = new ShoppingFragment();
+            /*android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame_container, fragment);
+            fragmentTransaction.commit();*/
+        } else if (id == R.id.settings) {
+            fragment = new SettingsFragment();
+            /*android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame_container, fragment);
+            fragmentTransaction.commit();*/
+        }
+
+        android.support.v4.app.FragmentTransaction fragmentTransaction =
+                getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame_container, fragment);
+        fragmentTransaction.commit();
+
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

@@ -14,7 +14,7 @@ import com.dawanse.dawn.meroo.dbhelper.ExpenseDB;
 
 import java.sql.SQLException;
 
-public class AddActivity extends AppCompatActivity {
+public class AddActivity extends AppCompatActivity{
 
     EditText etItem, etPrice;
     Button buttonSave;
@@ -27,8 +27,8 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        assert getSupportActionBar() != null;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        assert getSupportActionBar() != null;
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         etItem = (EditText) findViewById(R.id.etItem);
         etPrice = (EditText) findViewById(R.id.etPrice);

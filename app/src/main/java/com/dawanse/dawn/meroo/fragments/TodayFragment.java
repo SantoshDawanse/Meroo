@@ -12,7 +12,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.dawanse.dawn.meroo.R;
-import com.dawanse.dawn.meroo.activity.SettingsActivity;
 import com.dawanse.dawn.meroo.adapter.TodayFragmentCursorAdapter;
 import com.dawanse.dawn.meroo.dbhelper.ExpenseDB;
 
@@ -21,7 +20,6 @@ public class TodayFragment extends Fragment {
     ListView mListView;
     TodayFragmentCursorAdapter mTodayFragmentCursorAdapter;
     ExpenseDB mExpenseDB;
-    SettingsActivity mSettings;
 
     TextView tvShowTotal;
 
@@ -36,7 +34,6 @@ public class TodayFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         mExpenseDB = new ExpenseDB(getContext());
-        mSettings = new SettingsActivity();
     }
 
     @Override
